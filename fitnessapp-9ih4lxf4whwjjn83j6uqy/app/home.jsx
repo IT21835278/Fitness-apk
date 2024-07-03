@@ -4,7 +4,7 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import { StatusBar } from 'expo-status-bar'
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-// import ImageSlideShow from '@/components/ImageSlideShow';
+import ImageSlideShow from '../components/ImageSlideShow';
 
 
 
@@ -37,7 +37,7 @@ export default function Home() {
 
         {/* image side show */}
         <View>
-            {/* <ImageSlideShow/> */}
+            <ImageSlideShow/>
 
         </View>
     </SafeAreaView>
