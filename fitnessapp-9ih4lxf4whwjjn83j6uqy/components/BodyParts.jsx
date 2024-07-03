@@ -3,9 +3,11 @@ import React from 'react'
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { bodyParts } from '../constants/index';
 import { LinearGradient } from 'expo-linear-gradient';
+import { router, useRouter } from 'expo-router';
 
 
 export default function BodyParts() {
+    const router = useRouter()
   return (
     <View className="mx-4">
       <Text style={{fontSize:hp(3)}} className="font-semibold text-neutral-700 ">Exercises</Text>
@@ -30,6 +32,7 @@ const BodyPartCard =({item,index})=>{
     return(
         <View>
             <TouchableOpacity
+                onPress={()=>router.push({pathname:'/exercises',params:item})}
                 style={{width:wp(44), height:wp(52)}}
                 className="flex justify-end p-4 mb-4"
             >
