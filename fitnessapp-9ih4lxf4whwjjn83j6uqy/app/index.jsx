@@ -3,9 +3,11 @@ import React from 'react'
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { LinearGradient } from 'expo-linear-gradient'
 import Animated,{FadeIn,FadeInDown,FadeInUp,FadeOut} from 'react-native-reanimated'
+import { useRouter } from 'expo-router';
 
 
 export default function index() {
+    const router = useRouter()
     return (
         <View className="flex-1  flex justify-end">
             {/* <Text className="text-red-500">puka</Text> */}
@@ -27,6 +29,7 @@ export default function index() {
 
                 <Animated.View entering={FadeInDown.delay(2000).springify()}>
                     <TouchableOpacity 
+                        onPress={()=>router.push('home')}
                        style={{height:hp(7),width:wp(80)}}
                        className="bg-rose-600 flex items-center justify-center mx-auto rounded-full border-[2px] border-neutral-200"
                        >
