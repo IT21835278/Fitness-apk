@@ -5,12 +5,13 @@ import { StatusBar } from 'expo-status-bar'
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import ImageSlideShow from '../components/ImageSlideShow';
+import BodyParts from '../components/BodyParts';
 
 
 
 export default function Home() {
   return (
-    <SafeAreaView className="flex-1 flex bg-slate-300 space-y-5" edges={['top']}>
+    <SafeAreaView className="flex-1 flex justify-between bg-slate-300 space-y-5" edges={['top']}>
         <StatusBar style='dark' />
         {/* punchine and avatar */}
         <View className="flex-row justify-between items-center mx-s">
@@ -36,9 +37,12 @@ export default function Home() {
         </View>
 
         {/* image side show */}
-        <View>
+        <View className="flex-1">
             <ImageSlideShow/>
+        </View>
 
+        <View className="flex-1 flex">
+            <BodyParts/>
         </View>
     </SafeAreaView>
   )

@@ -20,6 +20,7 @@ export default function ImageSlideShow() {
         parallaxScrollingOffset: 105,
         parallaxAdjacentItemScale:0.75
       }}
+      className="mt-10"
     />
   );
 }
