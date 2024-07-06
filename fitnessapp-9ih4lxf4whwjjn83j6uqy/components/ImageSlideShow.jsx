@@ -12,7 +12,7 @@ export default function ImageSlideShow() {
       autoPlay
       renderItem={ItemCard}
       width={wp(100)}
-      height={hp(25)}
+      height={hp(50)}
       autoPlayInterval={4000}
       mode="parallax"
       modeConfig={{
@@ -20,14 +20,14 @@ export default function ImageSlideShow() {
         parallaxScrollingOffset: 105,
         parallaxAdjacentItemScale:0.75
       }}
-      className="mt-10"
+    //   className="mt-10"
     />
   );
 }
 
 const ItemCard = ({ item }) => {
   return (
-    <View className="w-[85%] h-[25vh] self-center shadow-lg bg-white rounded-3xl">
+    <View className="w-[85%] h-[37vh] self-center shadow-lg bg-white rounded-3xl">
       <Image
         source={item}
         className="w-full h-full rounded-3xl object-contain"
