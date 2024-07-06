@@ -4,6 +4,7 @@ import { useLocalSearchParams, useRouter } from 'expo-router';
 import { Image } from 'expo-image';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import Animated, { FadeInDown, FadeInLeft, FadeInRight, FadeInUp } from 'react-native-reanimated';
 
 
 
@@ -30,27 +31,27 @@ export default function exerciseDetails() {
       </TouchableOpacity>
 
       <ScrollView className="mx-4 space-y-2 mt-3 " showsVerticalScrollIndicator={false} contentContainerStyle={{paddingBottom:60}}>
-        <Text style={{fontSize:hp(2)}} className="text-red-700 font-bold tracking-wide">
+        <Animated.Text entering={FadeInDown.delay(500).duration(1000).springify()}  style={{fontSize:hp(2)}} className="text-red-700 font-bold tracking-wide">
           Equipment : <Text className="text-neutral-600">{item?.equipment}</Text>
-        </Text>
+        </Animated.Text>
 
-        <Text style={{fontSize:hp(2)}} className="text-red-700 font-bold tracking-wide">
+        <Animated.Text entering={FadeInLeft.delay(500).duration(1200).springify()} style={{fontSize:hp(2)}} className="text-red-700 font-bold tracking-wide">
           Target Muscles : <Text className="text-neutral-600">{item?.target}</Text>
-        </Text>
+        </Animated.Text>
 
-        <Text style={{fontSize:hp(2)}} className="text-red-700 font-bold tracking-wide">
+        <Animated.Text entering={FadeInRight.delay(500).duration(1300).springify()} style={{fontSize:hp(2)}} className="text-red-700 font-bold tracking-wide">
           Secodary Muscles : <Text className="text-neutral-600">{item?.secondaryMuscles}</Text>
-        </Text>
+        </Animated.Text>
 
-        <Text style={{fontSize:hp(3.5)}} className="text-red-700 font-bold tracking-wide">
+        <Animated.Text entering={FadeInUp.delay(500).duration(1400).springify()} style={{fontSize:hp(3.5)}} className="text-red-700 font-bold tracking-wide">
           Instruction : 
-        </Text>
+        </Animated.Text>
               {
                 item.instructions.split(',').map((instruction,index)=>{
                   return(
-                    <Text key={instruction} className="text-neutral-600">
+                    <Animated.Text entering={FadeInUp.delay(500).duration(1400).springify()} key={instruction} className="text-neutral-600">
                     {instruction}
-                  </Text>
+                  </Animated.Text>
                   )
 
                 })
